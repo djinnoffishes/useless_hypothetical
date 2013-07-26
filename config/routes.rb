@@ -1,7 +1,8 @@
 HypoWithScaffoldingTest::Application.routes.draw do
   resources :hypotheticals
   root 'hypotheticals#index'
-  get 'admin' => 'hypotheticals#admin'
+  get '/admin' => 'hypotheticals#admin'
+  get '/index/vote/:id' => 'hypotheticals#vote', :as => :vote
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,6 +5,8 @@
     <tr>
       <th>Option 1</th>
       <th>Option 2</th>
+      <th>Votes for Option 1</th>
+      <th>Votes for Option 2</th>
       <th></th>
     </tr>
   </thead>
@@ -14,6 +16,8 @@
       <tr>
         <td><%= hypothetical.hypo1 %> </td>
         <td><%= hypothetical.hypo2 %> </td>
+        <td><%= hypothetical.hypo1_votes %> </td>
+        <td><%= hypothetical.hypo2_votes %> </td>
         <td><%= link_to 'Show', hypothetical %></td>
         <td><%= link_to 'Edit', edit_hypothetical_path(hypothetical) %></td>
         <td><%= link_to 'Destroy', hypothetical, method: :delete, data: { confirm: 'Are you sure?' } %></td>

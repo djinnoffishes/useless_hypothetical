@@ -1,6 +1,6 @@
 <h1>would you rather...</h1>
-<%= @random_set[:hypo1] %><strong> OR </strong>
-<%= @random_set[:hypo2] %>
+<%= link_to @random_set.hypo1, vote_path(@random_set.id, selection: 1, method: :post ) %><strong> OR </strong>
+<%= link_to @random_set.hypo2, vote_path(@random_set.id, selection: 2, method: :post ) %>
 <br/>
 <br/>
 <%= link_to 'New Hypothetical', new_hypothetical_path %> | <%= link_to 'Admin', admin_path %>

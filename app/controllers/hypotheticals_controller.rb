@@ -7,6 +7,16 @@ class HypotheticalsController < ApplicationController
     @hypotheticals = Hypothetical.all
   end
 
+  def vote
+    @voting_object = Hypothetical.find(params[:id])
+    if params[:selection] == 1
+      @voting_object.increment_hypo1!
+    else
+      @voting_object.increment_hypo2!
+    end
+    redirect_to root_path
+  end
+
   # GET /hypotheticals
   def index
     @random_set = Hypothetical.order("RANDOM()").first
