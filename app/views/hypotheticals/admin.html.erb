@@ -1,0 +1,27 @@
+<h1>Admin Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option 1</th>
+      <th>Option 2</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hypotheticals.each do |hypothetical| %>
+      <tr>
+        <td><%= hypothetical.hypo1 %> </td>
+        <td><%= hypothetical.hypo2 %> </td>
+        <td><%= link_to 'Show', hypothetical %></td>
+        <td><%= link_to 'Edit', edit_hypothetical_path(hypothetical) %></td>
+        <td><%= link_to 'Destroy', hypothetical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hypothetical', new_hypothetical_path %> | <%= link_to 'Back', root_path %>

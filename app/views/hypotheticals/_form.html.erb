@@ -1,0 +1,19 @@
+<%= form_for(@hypothetical) do |f| %>
+  <% if @hypothetical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hypothetical.errors.count, "error") %> prohibited this hypothetical from being saved:</h2>
+      <ul>
+      <% @hypothetical.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="edit form">
+    <%= f.text_field :hypo1 %>
+    <%= f.text_field :hypo2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
