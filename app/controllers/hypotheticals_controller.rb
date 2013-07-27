@@ -1,5 +1,10 @@
 class HypotheticalsController < ApplicationController
   before_action :set_hypothetical, only: [:show, :edit, :update, :destroy]
+  before_action :init_session
+
+  def init_session
+    session[:votes] ||= [-1]
+  end
 
   # GET /hypotheticals
   # GET /hypotheticals.json
@@ -14,18 +19,19 @@ class HypotheticalsController < ApplicationController
     else
       @voting_object.increment_hypo2!
     end
+    session[:votes] << @voting_object.id
     redirect_to root_path
   end
 
   # GET /hypotheticals
   def index
-    @random_set = Hypothetical.order("RANDOM()").first
+    @random_set = Hypothetical.where("id NOT IN (?)", session[:votes]).order("RANDOM()").first
   end
 
   # GET /hypotheticals/1
   # GET /hypotheticals/1.json
   def show
-    @hypothetical = Hypothetical.find(params[:id])
+    @hypothetical = Hypothetical.find(params.id)
   end
 
   # GET /hypotheticals/new

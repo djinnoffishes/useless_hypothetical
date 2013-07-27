@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>Option 1</th>
-      <th>Option 2</th>
       <th>Votes for Option 1</th>
+      <th>Option 2</th>
       <th>Votes for Option 2</th>
       <th></th>
     </tr>
@@ -15,8 +15,8 @@
     <% @hypotheticals.each do |hypothetical| %>
       <tr>
         <td><%= hypothetical.hypo1 %> </td>
-        <td><%= hypothetical.hypo2 %> </td>
         <td><%= hypothetical.hypo1_votes %> </td>
+        <td><%= hypothetical.hypo2 %> </td>
         <td><%= hypothetical.hypo2_votes %> </td>
         <td><%= link_to 'Show', hypothetical %></td>
         <td><%= link_to 'Edit', edit_hypothetical_path(hypothetical) %></td>
