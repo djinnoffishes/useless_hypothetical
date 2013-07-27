@@ -1,0 +1,187 @@
+class HypotheticalController < ApplicationController
+
+	def index
+		# this is the data structure for the hypotheticals... for the time being
+		all_hypos = [
+		    ["sweat cheese", "burp farts"], 
+		    ["bleed from your anus when you sneeze", "piss gasoline once a week"], 
+		    ["always have to refer to minority races derogatively", "never see the ocean in person ever again"],
+		    ["eat 15 pounds of chocolate within the span of 1 hour", "barf uncontrollably for 30 minutes"],
+		    ["not be able to blink your eyes for 12 hours straight", "eat a bag of human hair"],
+		    ["live in Alabama", "get hit by a train traveling at 150 mph"],
+		]
+
+		# here's how we grab a random array of hypotheticals from the array. I added shuffle just to be a gangster:
+		random_set = all_hypos[rand(all_hypos.count)].shuffle
+
+		# here's how we plop it into a sentence:
+		@useless_hypothetical1 = random_set[0] 
+		@useless_hypothetical2 = random_set[1]
+	end
+
+end
+
+
+------
+
+
+<div id="content">
+    <h2 id="maintitle">a useless hypothetical</h2>
+<!--    <p id="description">
+        <em>"this is arguably the most important website on the world wide web"<br/></em>- Abraham Lincoln
+    </p>-->
+    <p id="question">Would you rather...</p>
+    <div class="container">
+        <div class="elements">
+            <p id="element1"><%= @useless_hypothetical1 %></p>
+        </div>
+        <div class="elements">
+            <p id="element2"><span>OR</span></p>
+        </div>
+        <div class="elements">
+            <p id="element3"><%= @useless_hypothetical2 %></p>
+        </div>
+    </div>
+</div>
+<div id="next-new">
+    <div id="create">
+        <a class="next-new-links" href="">Create your own</a>
+    </div>
+    <div id="next">
+        <a class="next-new-links" href="">Next hypothetical</a>
+    </div>
+</div>
+
+-------
+
+
+
+.container-left {
+/*    border: 1px solid black; */
+    width: 250px;
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.container-right {
+/*    border: 1px solid black; */
+    width: 250px;
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+    float: right;
+    height: 100%;
+}
+
+.container-middle {
+/*    border: 1px solid black; */
+    width: 50px;
+    position: relative;
+    margin: auto;
+    height: 100%;
+}
+
+#content .elements {
+    border: 1px solid black;
+    display: inline-block;
+    width: 32.33%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element1 {
+    border: 1px solid black;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element2 {
+    border: 1px solid black;    
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element3 {
+    border: 1px solid black;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.container {
+    border: 1px solid #CCC;
+    height: 250px;
+}
+
+.next-new-links {
+    color: #69a7d7;
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+}
+
+.next-new-links:hover {
+    text-decoration: underline;
+    color: #4C84AF;
+}
+
+#description {
+    text-align: center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 5px;
+    margin-bottom: 3em;
+}
+
+#content {
+    border: 1px solid #F00;
+    border-radius: 15px;
+    width: 600px;
+    margin: 3em auto 20px;
+    padding: 50px;
+    background-color: #fff;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-weight: lighter;
+    overflow: auto;
+    display: table;
+}
+
+#maintitle {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#create {
+    position: relative;
+    float: left;
+    text-align: right;
+    width: 370px;
+    font-size: .9em;
+}
+
+#next {
+    position: relative;
+    float: right;
+    text-align: left;
+    width: 370px;
+    font-size: .9em;
+}
+
+
+#element2 span {
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+ul {
+    width: 830px;
+    margin: 0 auto;
+    display: inline-block;
+    list-style: none;
+    padding-left: 0px;
+}
