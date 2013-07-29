@@ -1,3 +1,104 @@
 // Place all the styles related to the hypotheticals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.actions {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#content .elements {
+    display: inline-block;
+    width: 32.33%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element1 {
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element2 {
+
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#element3 {
+    float: right;
+    height: 100%;
+    vertical-align: middle;
+}
+
+a {
+    color: #69a7d7;
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4C84AF;
+}
+
+#description {
+    text-align: center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 5px;
+    margin-bottom: 3em;
+}
+
+#content {
+    border-radius: 15px;
+    width: 600px;
+    margin: 3em auto 20px;
+    padding: 50px;
+    background-color: #fff;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-weight: lighter;
+    overflow: auto;
+    display: table;
+}
+
+#maintitle {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#create {
+    position: relative;
+    float: left;
+    text-align: right;
+    width: 370px;
+    font-size: .9em;
+}
+
+#next {
+    position: relative;
+    float: right;
+    text-align: left;
+    width: 330px;
+    font-size: .9em;
+}
+
+
+#element2 span {
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+ul {
+    width: 830px;
+    margin: 0 auto;
+    display: inline-block;
+    list-style: none;
+    padding-left: 0px;
+}

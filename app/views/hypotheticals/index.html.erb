@@ -1,6 +1,30 @@
-<h1>would you rather...</h1>
-<%= link_to @random_set.hypo1, vote_path(@random_set.id, selection: 1, method: :post ) %><strong> OR </strong>
-<%= link_to @random_set.hypo2, vote_path(@random_set.id, selection: 2, method: :post ) %>
+<div id="content">
+    <h2 id="maintitle">a useless hypothetical</h2>
+    <p id="question">Would you rather...</p>
+    <div class="container">
+        <div class="elements">
+            <p id="element1">
+            	<%= link_to @random_set.hypo1, vote_path(@random_set.id, selection: 1, method: :post ) %>
+            </p>
+        </div>
+        <div class="elements">
+            <p id="element2"><span>OR</span></p>
+        </div>
+        <div class="elements">
+            <p id="element3">
+            	<%= link_to @random_set.hypo2, vote_path(@random_set.id, selection: 2, method: :post ) %>
+            </p>
+        </div>
+    </div>
+<p id="notice"><%= notice %></p>
+</div>
 <br/>
 <br/>
-<%= link_to 'New Hypothetical', new_hypothetical_path %> | <%= link_to 'Admin', admin_path %>
+<div id="next-new">
+    <div id="create">
+        <%= link_to 'create your own', new_hypothetical_path %>
+    </div>
+    <div id="next">
+        <%= link_to 'see next', root_path %>
+    </div>
+</div>

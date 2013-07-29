@@ -9,10 +9,21 @@
       </ul>
     </div>
   <% end %>
-  <div class="edit form">
-    <%= f.text_field :hypo1 %>
-    <%= f.text_field :hypo2 %>
-  </div>
+      <div class="elements">
+        <p id="element1">
+          <%= f.text_area :hypo1 %>
+        </p>
+      </div>
+      <div class="elements">
+        <p id="element2">
+          <span>OR</span>
+        </p>
+      </div>
+      <div class="elements">
+        <p id="element3">
+          <%= f.text_area :hypo2 %>
+        </p>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>

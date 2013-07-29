@@ -20,7 +20,7 @@ class HypotheticalsController < ApplicationController
       @voting_object.increment_hypo2!
     end
     session[:votes] << @voting_object.id
-    redirect_to root_path
+    redirect_to root_path, notice: 'Voted!'
   end
 
   # GET /hypotheticals
@@ -31,7 +31,7 @@ class HypotheticalsController < ApplicationController
   # GET /hypotheticals/1
   # GET /hypotheticals/1.json
   def show
-    @hypothetical = Hypothetical.find(params.id)
+    redirect_to root_path
   end
 
   # GET /hypotheticals/new
@@ -78,7 +78,7 @@ class HypotheticalsController < ApplicationController
   def destroy
     @hypothetical.destroy
     respond_to do |format|
-      format.html { redirect_to hypotheticals_url }
+      format.html { redirect_to hypotheticals_url, notice: 'Destroyed!' }
       format.json { head :no_content }
     end
   end
