@@ -27,6 +27,9 @@ class HypotheticalsController < ApplicationController
   # GET /hypotheticals
   def index
     @random_set = Hypothetical.where("id NOT IN (?)", session[:votes]).order("RANDOM()").first
+    if @random_set.blank?
+      redirect_to nomore_path
+    end
   end
 
   # GET /hypotheticals/1

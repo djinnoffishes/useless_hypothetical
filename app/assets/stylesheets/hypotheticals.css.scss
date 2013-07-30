@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+#nomore {
+    padding-top: 25px;
+}
+
 #content .elements {
     display: inline-block;
     width: 32.33%;
@@ -65,7 +69,6 @@ a:hover {
     display: block;
     font-weight: lighter;
     overflow: auto;
-    display: table;
 }
 
 #maintitle {
@@ -79,7 +82,6 @@ a:hover {
     text-align: right;
     width: 370px;
     font-size: .9em;
-    display: none;
 }
 
 #next {
@@ -88,7 +90,6 @@ a:hover {
     text-align: left;
     width: 330px;
     font-size: .9em;
-    display: none;
 }
 
 
