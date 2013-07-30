@@ -1,4 +1,5 @@
 class HypotheticalsController < ApplicationController
+  before_filter :authenticate , :only => [:admin, :update, :destroy, :edit]
   before_action :set_hypothetical, only: [:show, :edit, :update, :destroy]
   before_action :init_session
 
@@ -84,6 +85,14 @@ class HypotheticalsController < ApplicationController
   end
 
   private
+
+    #some basic http authentication for the admin pages    
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "admin" && password == "123"
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hypothetical
       @hypothetical = Hypothetical.find(params[:id])

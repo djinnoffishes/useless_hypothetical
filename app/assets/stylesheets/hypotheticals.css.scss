@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container {
+    display: none;
+}
+
 .actions {
     padding-top: 20px;
     text-align: center;
@@ -75,6 +79,7 @@ a:hover {
     text-align: right;
     width: 370px;
     font-size: .9em;
+    display: none;
 }
 
 #next {
@@ -83,6 +88,7 @@ a:hover {
     text-align: left;
     width: 330px;
     font-size: .9em;
+    display: none;
 }
 
 
