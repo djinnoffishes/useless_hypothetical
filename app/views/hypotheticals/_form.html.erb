@@ -1,17 +1,16 @@
 <%= form_for(@hypothetical) do |f| %>
   <% if @hypothetical.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hypothetical.errors.count, "error") %> prohibited this hypothetical from being saved:</h2>
-      <ul>
+      <h2><%= pluralize(@hypothetical.errors.count, "problem") %>:</h2>
       <% @hypothetical.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <p> - <%= msg %> </p>
       <% end %>
       </ul>
     </div>
   <% end %>
       <div class="elements">
         <p id="element1">
-          <%= f.text_area :hypo1 %>
+          <%= f.text_area :hypo1, class: "text-area" %>
         </p>
       </div>
       <div class="elements">
@@ -21,10 +20,10 @@
       </div>
       <div class="elements">
         <p id="element3">
-          <%= f.text_area :hypo2 %>
+          <%= f.text_area :hypo2, class: "text-area" %>
         </p>
       </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "submit-button" %>
   </div>
 <% end %>
