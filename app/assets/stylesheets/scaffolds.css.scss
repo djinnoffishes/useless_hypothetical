@@ -6,12 +6,6 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 5px;
-}
-
 pre {
   background-color: #eee;
   padding: 10px;
@@ -28,6 +22,7 @@ pre {
 #error_explanation {
   padding-bottom: 20px;
   color: red;
+  line-height: 5px;
   h2 {
     text-align: center;
     font-size: 14px;
