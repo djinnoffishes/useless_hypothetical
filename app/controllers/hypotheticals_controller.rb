@@ -15,7 +15,7 @@ class HypotheticalsController < ApplicationController
 
   def vote
     @voting_object = Hypothetical.find(params[:id])
-    if params[:selection] == 1
+    if params[:selection] == '1'
       @voting_object.increment_hypo1!
     else
       @voting_object.increment_hypo2!
