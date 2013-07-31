@@ -3,6 +3,9 @@ class HypotheticalsController < ApplicationController
   before_action :set_hypothetical, only: [:show, :edit, :update, :destroy]
   before_action :init_session
 
+  def about
+  end
+
   def init_session
     session[:votes] ||= [-1]
   end
