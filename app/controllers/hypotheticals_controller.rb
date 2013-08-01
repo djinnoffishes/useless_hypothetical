@@ -20,19 +20,18 @@ class HypotheticalsController < ApplicationController
     @voting_object = Hypothetical.find(params[:id])
     if params[:selection] == '1'
       @voting_object.increment_hypo1!
+      ratio = ((@voting_object[:hypo1_votes].to_f / (@voting_object[:hypo1_votes].to_f + @voting_object[:hypo2_votes].to_f)) * 100).round
     else
       @voting_object.increment_hypo2!
+      ratio = ((@voting_object[:hypo2_votes].to_f / (@voting_object[:hypo1_votes].to_f + @voting_object[:hypo2_votes].to_f)) * 100).round
     end
     session[:votes] << @voting_object.id
-    redirect_to root_path, notice: 'Voted!'
+    redirect_to root_path, notice: "#{ratio}% of people agree with you."
   end
 
   # GET /hypotheticals
   def index
     @random_set = Hypothetical.where("id NOT IN (?)", session[:votes]).order("RANDOM()").first
-    if @random_set.blank?
-      redirect_to nomore_path
-    end
   end
 
   # GET /hypotheticals/1
