@@ -1,3 +1,168 @@
 // Place all the styles related to the hypotheticals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    padding-top: 20px;
+    display: none;
+}
+
+.actions {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.text-area {
+    width: 194px;
+    max-width: 240px;  
+    line-height: 150%;
+    height: 70px;
+    max-height: 170px;
+    background: #FFFFFF;
+    border: solid 1px #949494;  
+    outline: 0;
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    -webkit-border-radius: 5px;  
+    -moz-border-radius: 5px;  
+}
+
+.text-area:focus {
+    border-color: #C9C9C9;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px; 
+}
+
+.submit-button {
+    width: auto;  
+    padding: 9px 15px;  
+    background: #f0f0f2;  
+    border: 0.5;  
+    font-size: 14px;  
+    color: #000000;
+    -webkit-border-radius: 5px;  
+    -moz-border-radius: 5px;  
+}
+
+#question {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#about {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 311px;
+    padding-top: 14px;
+    font-size: 15px;
+
+    li {
+        opacity: 0;
+        line-height: 22px;
+    }
+}
+
+#nomore {
+    padding-top: 25px;
+    text-align: center;
+}
+
+#content .elements {
+    display: inline-block;
+    width: 32.33%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element1 {
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#element2 {
+
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#element3 {
+    float: right;
+    height: 100%;
+    vertical-align: middle;
+}
+
+a {
+    color: #69a7d7;
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4C84AF;
+}
+
+#description {
+    text-align: center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 5px;
+    margin-bottom: 3em;
+}
+
+#content {
+    border-radius: 15px;
+    width: 600px;
+    margin: 3em auto 20px;
+    padding: 50px;
+    background-color: #fff;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-weight: lighter;
+    overflow: auto;
+}
+
+#maintitle {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#create {
+    position: relative;
+    float: left;
+    text-align: right;
+    width: 370px;
+    font-size: .9em;
+}
+
+#next {
+    position: relative;
+    float: right;
+    text-align: left;
+    width: 330px;
+    font-size: .9em;
+}
+
+
+#element2 span {
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*
+ul {
+    width: 830px;
+    margin: 0 auto;
+    display: inline-block;
+    list-style: none;
+    padding-left: 0px;
+}
+*/

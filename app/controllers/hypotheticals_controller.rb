@@ -1,6 +1,10 @@
 class HypotheticalsController < ApplicationController
+  before_filter :authenticate , :only => [:admin, :update, :destroy, :edit]
   before_action :set_hypothetical, only: [:show, :edit, :update, :destroy]
   before_action :init_session
+
+  def about
+  end
 
   def init_session
     session[:votes] ||= [-1]
@@ -14,24 +18,27 @@ class HypotheticalsController < ApplicationController
 
   def vote
     @voting_object = Hypothetical.find(params[:id])
-    if params[:selection] == 1
+    if params[:selection] == '1'
       @voting_object.increment_hypo1!
     else
       @voting_object.increment_hypo2!
     end
     session[:votes] << @voting_object.id
-    redirect_to root_path
+    redirect_to root_path, notice: 'Voted!'
   end
 
   # GET /hypotheticals
   def index
     @random_set = Hypothetical.where("id NOT IN (?)", session[:votes]).order("RANDOM()").first
+    if @random_set.blank?
+      redirect_to nomore_path
+    end
   end
 
   # GET /hypotheticals/1
   # GET /hypotheticals/1.json
   def show
-    @hypothetical = Hypothetical.find(params.id)
+    redirect_to root_path
   end
 
   # GET /hypotheticals/new
@@ -78,12 +85,20 @@ class HypotheticalsController < ApplicationController
   def destroy
     @hypothetical.destroy
     respond_to do |format|
-      format.html { redirect_to hypotheticals_url }
+      format.html { redirect_to hypotheticals_url, notice: 'Destroyed!' }
       format.json { head :no_content }
     end
   end
 
   private
+
+    #some basic http authentication for the admin pages    
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "admin" && password == "123"
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hypothetical
       @hypothetical = Hypothetical.find(params[:id])
