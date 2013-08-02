@@ -49,6 +49,11 @@
 #question {
     padding-top: 20px;
     text-align: center;
+    display: none;
+}
+
+#about_image {
+    opacity: 0;
 }
 
 #about {
@@ -129,6 +134,7 @@ a:hover {
 #maintitle {
     text-align: center;
     margin-bottom: 0px;
+    display: none;
 }
 
 #create {
